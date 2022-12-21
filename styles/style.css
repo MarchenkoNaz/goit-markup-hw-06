@@ -355,6 +355,18 @@ body {
 .modal-form__input-icon {
   position: relative;
 }
+/* .modal-form__input:focus,
+.modal-form__text-area:focus {
+  outline: 2px solid var(--active-button-background-color);
+} */
+.modal-form__input:focus {
+  border-color: var(--active-button-background-color);
+}
+
+.modal-form__input:focus + .modal-form__icon {
+  fill: var(--active-button-background-color);
+}
+
 .modal-form__icon {
   position: absolute;
   top: 14px;
@@ -372,12 +384,41 @@ body {
 }
 
 .modal-form__text-area::placeholder {
+  margin-bottom: 20px;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
 
   color: rgba(117, 117, 117, 0.5);
+}
+.modal-form__checkbox-text {
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: var(--primary-text-color);
+}
+.modal-form__link {
+  color: var(--active-button-background-color);
+}
+.modal-form__button {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  background-color: var(--active-button-background-color);
+  color: var(--secondary-text-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 4px;
 }
 
 /* #section benefits */
