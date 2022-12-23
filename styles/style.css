@@ -397,11 +397,12 @@ body {
   display: inline-block;
   margin-bottom: 20px;
 }
-/* .modal-form__checkbox {
+.modal-form__checkbox {
   position: absolute;
   appearance: none;
-} */
+}
 .modal-form__box {
+  position: relative;
   display: inline-block;
   width: 16px;
   height: 15px;
@@ -410,14 +411,18 @@ body {
   vertical-align: middle;
 }
 
-/* $ПРОБЛЕМА іконка чекбоксу зроблена НЕ через спрайт, коли вставлена в спрайт - не працює */
-
-.modal-form__checkbox:checked + .modal-form__box {
-  background-size: contain;
-  border-color: transparent;
+.modal-form__box-icon {
+  opacity: 0;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  height: 15px;
+  width: 16px;
+}
+.modal-form__checkbox:checked + .modal-form__box > .modal-form__box-icon {
+  border-radius: 4px;
   background-color: var(--active-button-background-color);
-  background-image: url('../images/iconcheck.svg');
-  background-origin: border-box;
+  opacity: 1;
 }
 
 .modal-form__checkbox-text {
@@ -449,6 +454,12 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border: 0;
   border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form__button:focus {
+  border: 0;
+  background-color: #188ce8;
 }
 
 /* #section benefits */
