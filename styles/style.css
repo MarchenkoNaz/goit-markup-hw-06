@@ -377,6 +377,7 @@ body {
   padding: 12px;
   font-size: 12px;
   margin-bottom: 20px;
+
   outline: none;
 }
 .modal-form__text-area:focus {
@@ -391,7 +392,36 @@ body {
 
   color: rgba(117, 117, 117, 0.5);
 }
+
+.check {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+/* .modal-form__checkbox {
+  position: absolute;
+  appearance: none;
+} */
+.modal-form__box {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border-radius: 4px;
+  border: 2px solid var(--button-text-color);
+  vertical-align: middle;
+}
+
+/* $ПРОБЛЕМА іконка чекбоксу зроблена НЕ через спрайт, коли вставлена в спрайт - не працює */
+
+.modal-form__checkbox:checked + .modal-form__box {
+  background-size: contain;
+  border-color: transparent;
+  background-color: var(--active-button-background-color);
+  background-image: url('../images/iconcheck.svg');
+  background-origin: border-box;
+}
+
 .modal-form__checkbox-text {
+  display: inline;
   font-size: 14px;
   line-height: 1.7;
 
